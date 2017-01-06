@@ -354,10 +354,322 @@ void volumAll()
 void timpAll()
 {
     cout<<"Timp";
+    char raspuns[2],unitate[2];
+    double value,valueS,valueMIN,valueH,valueD,valueWK,valueMO,valueYE,valueDEC,valueMIL,valueSEC,ziLuna;
+    ziLuna=30.416666666666668;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. secunda - s"<<endl;
+    cout<<"b. minut - min"<<endl;
+    cout<<"c. ora - h"<<endl;
+    cout<<"d. zi"<<endl;
+    cout<<"e. saptamana"<<endl;
+    cout<<"f. luna"<<endl;
+    cout<<"g. an"<<endl;
+    cout<<"h. deceniu"<<endl;
+    cout<<"i. secol"<<endl;
+    cout<<"j. mileniu"<<endl;
+    cout<<"Unitatea de masura -> ";
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<fixed<<setprecision(9);
+    cout<<value;
+
+    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    {
+        cout<<"s="<<endl<<endl;
+       // valueS = 100*value;
+       // cout<<'='<<valueS<" s"<<endl;
+
+        valueMIN = value/60;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        valueH=valueMIN/60;
+        cout<<'='<<valueH<<" h"<<endl;
+        valueD = valueH/24;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK= valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueYE = valueD/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    {
+        cout<<"min="<<endl<<endl;
+        valueS = value*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        valueH=value/60;
+        cout<<'='<<valueH<<" h"<<endl;
+        valueD = valueH/24;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK= valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueYE = valueD/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    {
+        cout<<"h="<<endl<<endl;
+        valueMIN = value*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        valueD = value/24;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK= valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueYE = valueD/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    {
+        cout<<"zile="<<endl<<endl;
+
+        valueH=value*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        valueWK= value/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = value/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueYE = value/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+        else if(unitate[0] == 'e' || unitate[0] == 'F' && unitate[1] ==0)
+    {
+        cout<<"saptamani="<<endl<<endl;
+
+        valueD=value*7;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueYE = valueD/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+            else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    {
+        cout<<"luni="<<endl<<endl;
+        valueD=value*ziLuna;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK=valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueYE = valueD/365;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+                else if(unitate[0] == 'g' || unitate[0] == 'G' && unitate[1] ==0)
+    {
+        cout<<"ani="<<endl<<endl;
+        valueD=value*365;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK=valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        valueDEC = value/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = value/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = value/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'h' || unitate[0] == 'H' && unitate[1] ==0)
+    {
+        cout<<"decenii="<<endl<<endl;
+        valueYE=value*10;
+        valueD=valueYE*365;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK=valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueSEC = valueYE/100;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'i' || unitate[0] == 'I' && unitate[1] ==0)
+    {
+        cout<<"=secole"<<endl;
+        valueYE=value*100;
+        valueD=valueYE*365;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK=valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = valueYE/10;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueMIL = valueYE/1000;
+        cout<<'='<<valueMIL<<" milenii"<<endl;
+    }
+    else if(unitate[0] == 'j' || unitate[0] == 'J' && unitate[1] ==0)
+    {
+        cout<<"=milenii"<<endl;
+        valueYE=value*1000;
+        valueD=valueYE*365;
+        valueH=valueD*24;
+        valueMIN = valueH*60;
+        valueS = valueMIN*60;
+        cout<<'='<<valueS<<" s"<<endl;
+        cout<<'='<<valueMIN<<" min"<<endl;
+        cout<<'='<<valueH<<" h"<<endl;
+        cout<<'='<<valueD<<" zile"<<endl;
+        valueWK=valueD/7;
+        cout<<'='<<valueWK<<" saptamani"<<endl;
+        valueMO = valueD/ziLuna;
+        cout<<'='<<valueMO<<" luni"<<endl;
+        cout<<'='<<valueYE<<" ani"<<endl;
+        valueDEC = value*100;
+        cout<<'='<<valueDEC<<" decenii"<<endl;
+        valueSEC = value*10;
+        cout<<'='<<valueSEC<<" secole"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        timpAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
+
 }
 void vitezaAll()
 {
-    cout<<"Viteza";
+    cout<<"::Viteza::";
+    char raspuns[2],unitate[2];
+    double value,valueMS,valueMPH,valueKMH,ms,mph;
+    ms=3.5999999712000004;
+    mph=1.6093439871252482;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. Kilometrii pe ora - km/h"<<endl;
+    cout<<"b. Metri pe secunda - m/s"<<endl;
+    cout<<"c. Mile pe ora - mph"<<endl;
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+        {
+            cout<<"=km/h"<<endl;
+            valueMS=value/ms;
+            cout<<'='<<valueMS<<" m/s"<<endl;
+            valueMPH=value/mph;
+            cout<<'='<<valueMPH<<" mph"<<endl;
+        }
+
+    else    if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+        {
+            cout<<"=m/s"<<endl;
+            valueKMH=value*ms;
+            cout<<'='<<valueKMH<<" km/h"<<endl;
+            valueMPH=valueKMH/mph;
+            cout<<'='<<valueMPH<<" mph"<<endl;
+        }
+         else    if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+        {
+            cout<<"=mph"<<endl;
+            valueKMH=value*mph;
+            cout<<'='<<valueKMH<<" km/h"<<endl;
+            valueMS=valueKMH/ms;
+            cout<<'='<<valueMS<<" m/s"<<endl;
+        }
 }
 void temperaturaAll()
 {
@@ -446,7 +758,201 @@ cout<<fixed<<setprecision(9);
 }
 void masaAll()
 {
-    cout<<"Masa";
+    cout<<"::Masa::"<<endl;
+    char raspuns[2],unitate[2];
+    double value,valueG,valueMG,valueKG,valueT,valueLB,valueSLUG,valueAV,valueTROY,lb,slug,av,troy;
+    lb=453.592;//1lb=g
+    slug=14.593903;//1slug=kg
+    av=28.3495;
+    troy=31.103499999999997777;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. gram - g"<<endl;
+    cout<<"b. miligram - mg"<<endl;
+    cout<<"c. kilogram - kg"<<endl;
+    cout<<"d. tona - t"<<endl;
+    cout<<"e. Livre - lb"<<endl;
+    cout<<"f. slug"<<endl;
+    cout<<"g. oz (Av)"<<endl;
+    cout<<"h. oz (Troy)"<<endl;
+    cout<<"Unitatea de masura -> ";
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    {
+        cout<<"g="<<endl<<endl;
+        valueMG= 1000*value;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=value/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=value/1000000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = value/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = value/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = value/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+    }
+  else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    {
+        cout<<"mg="<<endl<<endl;
+        valueG= value/1000;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueKG=valueG/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=valueKG/1000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+
+
+    }
+    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    {
+        cout<<"kg="<<endl<<endl;
+        valueG= value*1000;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueT=value/1000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = value/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+
+    }
+    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    {
+        cout<<"t="<<endl<<endl;
+        valueG= value*1000000;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=value*1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+    }
+    else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    {
+    cout<<"lb="<<endl<<endl;
+        valueG= value*lb;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=valueG/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=valueG/1000000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+    }
+    else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    {
+        cout<<"slug="<<endl<<endl;
+        valueG= value*slug/1000;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=valueG/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=valueG/1000000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+    }
+   else if(unitate[0] == 'g' || unitate[0] == 'G' && unitate[1] ==0)
+    {
+cout<<"oz (Av)="<<endl<<endl;
+        valueG= value*av;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=valueG/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=valueG/1000000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueTROY = valueG/troy;
+        cout<<'='<<valueTROY<<" troy"<<endl;
+    }
+    else if(unitate[0] == 'h' || unitate[0] == 'H' && unitate[1] ==0)
+    {
+    cout<<"oz (Troy)="<<endl<<endl;
+        valueG= value*troy;
+        cout<<'='<<valueG<<" g"<<endl;
+        valueMG= valueG*1000;
+        cout<<'='<<valueMG<<" mg"<<endl;
+        valueKG=valueG/1000;
+        cout<<'='<<valueKG<<" kg"<<endl;
+        valueT=valueG/1000000;
+        cout<<'='<<valueT<<" t"<<endl;
+        valueLB = valueG/lb;
+        cout<<'='<<valueLB<<" lb"<<endl;
+        valueSLUG = valueKG/slug;
+        cout<<'='<<valueSLUG<<" slug"<<endl;
+        valueAV = valueG/av;
+        cout<<'='<<valueAV<<" av"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        masaAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
 }
 void energieAll()
 {
@@ -454,7 +960,110 @@ void energieAll()
 }
 void presiuneAll()
 {
-    cout<<"Presiune";
+    char raspuns[2],unitate[2];
+    double value,valueBAR,valuePSI,valueATM,valuePA,valueTORR,psi,atm,torr,bar;
+    psi=6894.75729317;
+    atm=101325.2738;
+    torr=133.322368421;
+    bar=98000;
+    cout<<"::Presiune::";
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. Pa"<<endl;
+    cout<<"b. bar"<<endl;
+    cout<<"c. psi"<<endl;
+    cout<<"d. atm"<<endl;
+    cout<<"e. torr"<<endl;
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+        {
+            cout<<"=Pa"<<endl;
+            valueBAR= value/bar;
+            cout<<'='<<valueBAR<<" bar"<<endl;
+            valuePSI= value/psi;
+            cout<<'='<<valuePSI<<" psi"<<endl;
+            valueATM= value/atm;
+            cout<<'='<<valueATM<<" atm"<<endl;
+            valueTORR= value/torr;
+            cout<<'='<<valueTORR<<" torr"<<endl;
+        }
+        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+        {
+            cout<<"=bar"<<endl;
+            valuePA=value*bar;
+            cout<<'='<<valuePA<<" pa"<<endl;
+            valuePSI= valuePA/psi;
+            cout<<'='<<valuePSI<<" psi"<<endl;
+            valueATM= valuePA/atm;
+            cout<<'='<<valueATM<<" atm"<<endl;
+            valueTORR= valuePA/torr;
+            cout<<'='<<valueTORR<<" torr"<<endl;
+        }
+        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+        {
+            cout<<"=psi"<<endl;
+            valuePA=value*psi;
+            cout<<'='<<valuePA<<" pa"<<endl;
+            valueBAR= valuePA/bar;
+            cout<<'='<<valueBAR<<" bar"<<endl;
+            valueATM= valuePA/atm;
+            cout<<'='<<valueATM<<" atm"<<endl;
+            valueTORR= valuePA/torr;
+            cout<<'='<<valueTORR<<" torr"<<endl;
+        }
+        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+        {
+            cout<<"=atm"<<endl;
+            valuePA=value*atm;
+            cout<<'='<<valuePA<<" pa"<<endl;
+            valueBAR= valuePA/bar;
+            cout<<'='<<valueBAR<<" bar"<<endl;
+            valuePSI= valuePA/psi;
+            cout<<'='<<valuePSI<<" psi"<<endl;;
+            valueTORR= valuePA/torr;
+            cout<<'='<<valueTORR<<" torr"<<endl;
+        }
+        else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+        {
+            cout<<"=torr"<<endl;
+            valuePA=value*torr;
+            cout<<'='<<valuePA<<" pa"<<endl;
+            valueBAR= valuePA/bar;
+            cout<<'='<<valueBAR<<" bar"<<endl;
+            valuePSI= valuePA/psi;
+            cout<<'='<<valuePSI<<" psi"<<endl;
+            valueATM= valuePA/atm;
+            cout<<'='<<valueATM<<" atm"<<endl;
+        }
+         cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        masaAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
 }
 void densitateAll()
 {
