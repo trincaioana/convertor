@@ -73,6 +73,7 @@ int main()
     }
     else if(choise==8)
     {
+        system("CLS");
         energieAll();
     }
     else if(choise==9)
@@ -345,11 +346,245 @@ void lungimeAll()
 }
 void arieAll()
 {
-    cout<<"Arie";
+    cout<<"::Arie::"<<endl;
+    char raspuns[2],unitate[2];
+    double value,in,yd,ft,valueM2,valueIN2,valueYD2,valueFT2,valueHA;
+    in=0.0006452;//1in=m
+    yd=0.836127816;//1yd=m
+    ft=0.0929;//1ft=m
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. metru patrat - m^2"<<endl;
+    cout<<"b. hectar - ha"<<endl;
+    cout<<"c. foot/picior patrat - ft^2"<<endl;
+    cout<<"d. inch patrat - in^2"<<endl;
+    cout<<"e. yard patrat - yd^2"<<endl;
+    cout<<"Unitatea de masura -> ";
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+        cout<<fixed<<setprecision(9);
+    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    {
+        cout<<"m^2="<<endl<<endl;
+        valueHA = value/10000;
+        cout<<'='<<valueHA<<" ha"<<endl;
+        valueFT2=value/ft;
+        cout<<'='<<valueFT2<<" ft^2"<<endl;
+        valueIN2 = value/in;
+        cout<<'='<<valueIN2<<" in^2"<<endl;
+        valueYD2 = value/yd;
+        cout<<'='<<valueYD2<<" yd^2"<<endl;
+    }
+    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    {
+        cout<<"ha="<<endl<<endl;
+        valueM2 = value*10000;
+        cout<<'='<<valueM2<<" m^2"<<endl;
+        valueFT2=valueM2/ft;
+        cout<<'='<<valueFT2<<" ft^2"<<endl;
+        valueIN2 = valueM2/in;
+        cout<<'='<<valueIN2<<" in^2"<<endl;
+        valueYD2 = valueM2/yd;
+        cout<<'='<<valueYD2<<" yd^2"<<endl;
+    }
+    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    {
+        cout<<"ft^2="<<endl<<endl;
+        valueM2 = value*ft;
+        cout<<'='<<valueM2<<" m^2"<<endl;
+        valueHA = valueM2/10000;
+        cout<<'='<<valueHA<<" ha"<<endl;
+        valueIN2 = valueM2/in;
+        cout<<'='<<valueIN2<<" in^2"<<endl;
+        valueYD2 = valueM2/yd;
+        cout<<'='<<valueYD2<<" yd^2"<<endl;
+    }
+    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    {
+        cout<<"in^2="<<endl<<endl;
+        valueM2 = value*in;
+        cout<<'='<<valueM2<<" m^2"<<endl;
+        valueHA = valueM2/10000;
+        cout<<'='<<valueHA<<" ha"<<endl;
+        valueFT2=valueM2/ft;
+        cout<<'='<<valueFT2<<" ft^2"<<endl;
+        valueYD2 = valueM2/yd;
+        cout<<'='<<valueYD2<<" yd^2"<<endl;
+    }
+    else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    {
+        cout<<"yd^2="<<endl<<endl;
+        valueM2 = value*yd;
+        cout<<'='<<valueM2<<" m^2"<<endl;
+        valueHA = valueM2/10000;
+        cout<<'='<<valueHA<<" ha"<<endl;
+        valueFT2=valueM2/ft;
+        cout<<'='<<valueFT2<<" ft^2"<<endl;
+        valueIN2 = valueM2/in;
+        cout<<'='<<valueIN2<<" in^2"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        volumAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
+
 }
 void volumAll()
 {
-    cout<<"Volum";
+    cout<<"::Volum::"<<endl;
+    char raspuns[2],unitate[2];
+    double value,in,yd,ft,gal,valueM3,valueIN3,valueYD3,valueFT3,valueGAL,valueLIT;
+    in=0.000016387064;//1in=m
+    yd=0.76456;//1yd=m
+    ft=0.02832;//1ft=m
+    gal=0.003785;//1gal=m
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. metru cub - m^3"<<endl;
+    cout<<"b. litru - l"<<endl;
+    cout<<"c. galon "<<endl;
+    cout<<"d. foot/picior cub - ft^3"<<endl;
+    cout<<"e. inch cub - in^3"<<endl;
+    cout<<"f. yard cub - yd^3"<<endl;
+    cout<<"Unitatea de masura -> ";
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+        cout<<fixed<<setprecision(9);
+    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    {
+        cout<<"m^3="<<endl<<endl;
+        valueLIT = value*1000;
+        cout<<'='<<valueLIT<<" litri"<<endl;
+        valueGAL = value/gal;
+        cout<<'='<<valueGAL<<" gal"<<endl;
+        valueFT3=value/ft;
+        cout<<'='<<valueFT3<<" ft^3"<<endl;
+        valueIN3 = value/in;
+        cout<<'='<<valueIN3<<" in^3"<<endl;
+        valueYD3 = value/yd;
+        cout<<'='<<valueYD3<<" yd^3"<<endl;
+    }
+    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    {
+        cout<<"l="<<endl<<endl;
+        valueM3 = value/1000;
+        cout<<'='<<valueM3<<" m^3"<<endl;
+        valueGAL = valueM3/gal;
+        cout<<'='<<valueGAL<<" gal"<<endl;
+        valueFT3=valueM3/ft;
+        cout<<'='<<valueFT3<<" ft^3"<<endl;
+        valueIN3 = valueM3/in;
+        cout<<'='<<valueIN3<<" in^3"<<endl;
+        valueYD3 = valueM3/yd;
+        cout<<'='<<valueYD3<<" yd^3"<<endl;
+
+    }
+       else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    {
+        cout<<"gal="<<endl<<endl;
+        valueM3 = value*gal;
+        cout<<'='<<valueM3<<" m^3"<<endl;
+        valueLIT = valueM3*1000;
+        cout<<'='<<valueLIT<<" litri"<<endl;
+        valueFT3=valueM3/ft;
+        cout<<'='<<valueFT3<<" ft^3"<<endl;
+        valueIN3 = valueM3/in;
+        cout<<'='<<valueIN3<<" in^3"<<endl;
+        valueYD3 = valueM3/yd;
+        cout<<'='<<valueYD3<<" yd^3"<<endl;
+    }
+       else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    {
+        cout<<"ft^3="<<endl<<endl;
+        valueM3 = value*ft;
+        cout<<'='<<valueM3<<" m^3"<<endl;
+        valueLIT = valueM3*1000;
+        cout<<'='<<valueLIT<<" litri"<<endl;
+        valueGAL = valueM3/gal;
+        cout<<'='<<valueGAL<<" gal"<<endl;
+        valueIN3 = valueM3/in;
+        cout<<'='<<valueIN3<<" in^3"<<endl;
+        valueYD3 = valueM3/yd;
+        cout<<'='<<valueYD3<<" yd^3"<<endl;
+    }
+      else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    {
+        cout<<"in^3="<<endl<<endl;
+        valueM3 = value*in;
+        cout<<'='<<valueM3<<" m^3"<<endl;
+        valueLIT = valueM3*1000;
+        cout<<'='<<valueLIT<<" litri"<<endl;
+        valueGAL = valueM3/gal;
+        cout<<'='<<valueGAL<<" gal"<<endl;
+        valueFT3=valueM3/ft;
+        cout<<'='<<valueFT3<<" ft^3"<<endl;
+        valueYD3 = valueM3/yd;
+        cout<<'='<<valueYD3<<" yd^3"<<endl;
+    }
+    else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    {
+        cout<<"yd^3="<<endl<<endl;
+        valueM3 = value*yd;
+        cout<<'='<<valueM3<<" m^3"<<endl;
+        valueLIT = valueM3*1000;
+        cout<<'='<<valueLIT<<" litri"<<endl;
+        valueGAL = valueM3/gal;
+        cout<<'='<<valueGAL<<" gal"<<endl;
+        valueFT3=valueM3/ft;
+        cout<<'='<<valueFT3<<" ft^3"<<endl;
+        valueIN3 = valueM3/in;
+        cout<<'='<<valueIN3<<" in^3"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        volumAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
 }
 void timpAll()
 {
@@ -956,17 +1191,92 @@ cout<<"oz (Av)="<<endl<<endl;
 }
 void energieAll()
 {
-    cout<<"Energie";
+    cout<<"Energie"<<endl;
+    char raspuns[2],unitate[2];
+    double value,valueJ,valueKJ,valueWH,valueWS;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. Joule - J"<<endl;
+    cout<<"b. Kilojoule - kJ"<<endl;
+    cout<<"c. Watt ora - w*h"<<endl;
+    cout<<"d. Watt secunda - w*s"<<endl;
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+        {
+            cout<<"J="<<endl;
+            valueKJ= value/1000;
+            cout<<'='<<valueKJ<<" kJ"<<endl;
+            cout<<'='<<value<<" w*s"<<endl;
+            valueWH= value/3600;
+            cout<<'='<<valueWH<<" w*h"<<endl;
+        }
+        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+        {
+            cout<<"kJ="<<endl;
+            valueJ= value*1000;
+            cout<<'='<<valueJ<<" J"<<endl;
+            cout<<'='<<valueJ<<" w*s"<<endl;
+            valueWH= valueJ/3600;
+            cout<<'='<<valueWH<<" w*h"<<endl;
+        }
+        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+        {
+            cout<<"w*s="<<endl;
+            cout<<'='<<value<<" J"<<endl;
+            valueKJ= value/1000;
+            cout<<'='<<valueKJ<<" kJ"<<endl;
+            valueWH= value/3600;
+            cout<<'='<<valueWH<<" w*h"<<endl;
+        }
+        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+        {
+            cout<<"w*h="<<endl;
+            valueJ= value*3600;
+            cout<<'='<<valueJ<<" J"<<endl;
+            valueKJ= valueJ/1000;
+            cout<<'='<<valueKJ<<" kJ"<<endl;
+            cout<<'='<<valueJ<<" w*s"<<endl;
+        }
+        cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        energieAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
+
 }
 void presiuneAll()
 {
+    cout<<"::Presiune::"<<endl;
     char raspuns[2],unitate[2];
     double value,valueBAR,valuePSI,valueATM,valuePA,valueTORR,psi,atm,torr,bar;
     psi=6894.75729317;
     atm=101325.2738;
     torr=133.322368421;
     bar=98000;
-    cout<<"::Presiune::";
     cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
     cout<<"a. Pa"<<endl;
     cout<<"b. bar"<<endl;
@@ -1051,7 +1361,7 @@ void presiuneAll()
     else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
     {
         system("CLS");
-        masaAll();
+        presiuneAll();
     }
 
     else
@@ -1067,11 +1377,155 @@ void presiuneAll()
 }
 void densitateAll()
 {
-    cout<<"Densitate";
+    cout<<"::Densitate::"<<endl;
+    char raspuns[2],unitate[2];
+    double value,valueKMm3,valueFUNTin,valueFUNTgal,valueKGl,valueUNCIE,funtIN,funtGAL,uncie;
+    funtIN=27679.89858;
+    funtGAL=119.8264273;
+    uncie=1.001153961;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. kg/m^3"<<endl;
+    cout<<"b. funt/inch^3 - lb/in^3"<<endl;
+    cout<<"c. funt/galon - lb/gal"<<endl;
+    cout<<"d. kg/l"<<endl;
+    cout<<"e. uncie (Avoirdupois)/foot^3 - oz(Av)/ft^3"<<endl;
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+        {
+            cout<<"kg/m^3="<<endl;
+            valueFUNTin= value/funtIN;
+            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+            valueFUNTgal= value/funtGAL;
+            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+            valueKGl= value/1000;
+            cout<<'='<<valueKGl<<" kg/l"<<endl;
+            valueUNCIE= value/uncie;
+            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+        }
+        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+        {
+            cout<<"lb/in^3="<<endl;
+            valueKMm3=value*funtIN;
+            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;;
+            valueFUNTgal= valueKMm3/funtGAL;
+            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+            valueKGl= valueKMm3/1000;
+            cout<<'='<<valueKGl<<" kg/l"<<endl;
+            valueUNCIE= valueKMm3/uncie;
+            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+
+        }
+        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+        {
+            cout<<"lb/gal="<<endl;
+            valueKMm3=value*funtGAL;
+            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+            valueFUNTin= valueKMm3/funtIN;
+            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+            valueKGl= valueKMm3/1000;
+            cout<<'='<<valueKGl<<" kg/l"<<endl;
+            valueUNCIE= valueKMm3/uncie;
+            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+
+        }
+        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+        {
+            cout<<"kg/l="<<endl;
+            valueKMm3=value*1000;
+            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+            valueFUNTin= valueKMm3/funtIN;
+            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+            valueFUNTgal= valueKMm3/funtGAL;
+            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+            valueUNCIE= valueKMm3/uncie;
+            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+        }
+        else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+        {
+            cout<<"oz(Av)/ft^3="<<endl;
+            valueKMm3=value*uncie;
+            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+            valueFUNTin= valueKMm3/funtIN;
+            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+            valueFUNTgal= valueKMm3/funtGAL;
+            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+            valueKGl= valueKMm3/1000;
+            cout<<'='<<valueKGl<<" kg/l"<<endl;
+        }
 }
 void combustibilAll()
 {
-    cout<<"Combustibli";
+    cout<<"::Combustibli::";
+    char raspuns[2],unitate[2];
+    double value,valueL,valueK,valueG,l,g;
+    g=0.4251437075;
+    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"a. km/l"<<endl;
+    cout<<"b. l/100km"<<endl;
+    cout<<"c. mile/galon"<<endl;
+    cin>>unitate[0];
+    cout<<"Introdu valoare -> ";
+    cin>>value;
+    system("CLS");
+    cout<<value;
+    cout<<fixed<<setprecision(9);
+        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+        {
+            cout<<"km/l="<<endl;
+            valueL= 100/value;
+            cout<<'='<<valueL<<" l/100km"<<endl;
+            valueG= value/g;
+            cout<<'='<<valueG<<" mile/galon"<<endl;
+        }
+        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+        {
+            cout<<"l/100km="<<endl;
+            valueK= 100/value;
+            cout<<'='<<valueK<<" km/l"<<endl;
+            valueG= valueK/g;
+            cout<<'='<<valueG<<" mile/galon"<<endl;
+        }
+        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+        {
+            cout<<"mile/galon="<<endl;
+            valueK= value*g;
+            cout<<'='<<valueK<<" km/l"<<endl;
+            valueL= 100/valueK;
+            cout<<'='<<valueL<<" l/100km"<<endl;
+        }
+
+         cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cin>>raspuns;
+    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    {
+        system("CLS");
+        main();
+    }
+    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    {
+        system("CLS");
+        combustibilAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
+
+
 }
 void invalid()
 {
@@ -1095,5 +1549,4 @@ void invalid()
 
         exit (EXIT_FAILURE);
     }
-
 }
