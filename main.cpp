@@ -16,82 +16,79 @@ void combustibilAll();
 void invalid();
 int main()
 {
-
-    unsigned int choise=19;
-
+    char choise[2];
     cout << "::Meniu:: CONVERTOR" << endl<<endl;
-    cout << "1. Lungime" << endl;
-    cout << "2. Arie" << endl;
-    cout << "3. Volum" << endl;
-    cout << "4. Timp" << endl;
-    cout << "5. Viteza" << endl;
-    cout << "6. Temperatura" << endl;
-    cout << "7. Masa" << endl;
-    cout << "8. Energie" << endl;
-    cout << "9. Presiune" << endl;
-    cout << "10.Densitate" << endl;
-    cout << "11.Consum combustibil" << endl;
-    cout << "0. Exit"<<endl<<endl;
+    cout << "(A) - Arie" << endl;
+    cout << "(B) - Consum combustibil" << endl;
+    cout << "(C) - Densitate" << endl;
+    cout << "(D) - Energie" << endl;
+    cout << "(E) - Lungime" << endl;
+    cout << "(F) - Masa" << endl;
+    cout << "(G) - Presiune" << endl;
+    cout << "(H) - Temperatura" << endl;
+    cout << "(I) - Timp" << endl;
+    cout << "(J) - Viteza" << endl;
+    cout << "(K) - Volum" << endl;
+    cout << "(X) - Exit"<<endl<<endl;
     cout << "Alegerea dumneavoastra -> ";
     cin >> choise;
-    if(choise==1)
-    {
-        system("CLS");
-        lungimeAll();
-    }
 
-    else if(choise==2)
+    if((choise[0]=='A' || choise[0]=='a') && choise[1]==0)
     {
         system("CLS");
         arieAll();
     }
-
-    else if(choise==3)
-    {
-        system("CLS");
-        volumAll();
-    }
-    else if(choise==4)
-    {
-        system("CLS");
-        timpAll();
-    }
-    else if(choise==5)
-    {
-        system("CLS");
-        vitezaAll();
-    }
-    else if(choise==6)
-    {
-        system("CLS");
-        temperaturaAll();
-    }
-    else if(choise==7)
-    {
-        system("CLS");
-        masaAll();
-    }
-    else if(choise==8)
-    {
-        system("CLS");
-        energieAll();
-    }
-    else if(choise==9)
-    {
-        system("CLS");
-        presiuneAll();
-    }
-    else if(choise==10)
-    {
-        system("CLS");
-        densitateAll();
-    }
-    else if(choise==11)
+    else if((choise[0]=='B' || choise[0]=='b') && choise[1]==0)
     {
         system("CLS");
         combustibilAll();
     }
-    else if(choise==0)
+    else if((choise[0]=='C' || choise[0]=='c') && choise[1]==0)
+    {
+        system("CLS");
+        densitateAll();
+    }
+    else if((choise[0]=='D' || choise[0]=='d') && choise[1]==0)
+    {
+        system("CLS");
+        energieAll();
+    }
+    else if((choise[0]=='E' || choise[0]=='e') && choise[1]==0)
+    {
+        system("CLS");
+        lungimeAll();
+    }
+    else if((choise[0]=='F' || choise[0]=='f') && choise[1]==0)
+    {
+        system("CLS");
+        masaAll();
+    }
+    else if((choise[0]=='G' || choise[0]=='g') && choise[1]==0)
+    {
+        system("CLS");
+        presiuneAll();
+    }
+    else if((choise[0]=='H' || choise[0]=='h') && choise[1]==0)
+    {
+        system("CLS");
+        temperaturaAll();
+    }
+    else if((choise[0]=='I' || choise[0]=='i') && choise[1]==0)
+    {
+        system("CLS");
+        timpAll();
+    }
+    else if((choise[0]=='J' || choise[0]=='j') && choise[1]==0)
+    {
+        system("CLS");
+        vitezaAll();
+    }
+    else if((choise[0]=='K' || choise[0]=='k') && choise[1]==0)
+    {
+        system("CLS");
+        volumAll();
+    }
+    else if((choise[0]=='X' || choise[0]=='x') && choise[1]==0)
     {
         system("CLS");
         cout<<"SFARSITUL PROGRAMULUI"<<endl;
@@ -101,7 +98,7 @@ int main()
         cout<<"2017"<<endl;
         return 0;
     }
-    else if(choise>11 || choise<0)
+    else
     {
         system("CLS");
         invalid();
@@ -112,7 +109,7 @@ int main()
 
 void lungimeAll()
 {
-    cout<<"::Lungime::"<<endl;
+    cout<<"::Lungime::"<<endl<<endl;
     char raspuns[2],unitate[2];
     double value,in,mi,nmi,yd,ft,valueM,valueCM,valueMM,valueKM,valueIN,valueMI,valueNMI,valueYD,valueFT;
     in=0.0254;//1in=m
@@ -120,7 +117,8 @@ void lungimeAll()
     nmi=1852;//1nmi=m
     yd=0.9144002494;//1yd=m
     ft=0.3048;//1ft=m
-    cout<<"Alege ce unitate de masura vrei ?"<<endl<<endl;
+    cout<<"Pentru a alege o unitate de masura"<<endl;
+    cout<<"selectati o litera -> a - i"<<endl<<endl;
     cout<<"a. metru - m"<<endl;
     cout<<"b. centimetru - cm"<<endl;
     cout<<"c. milimetru - mm"<<endl;
@@ -130,15 +128,28 @@ void lungimeAll()
     cout<<"g. mila marina - nmi"<<endl;
     cout<<"h. yard - yd"<<endl;
     cout<<"i. foot/picior - ft"<<endl;
-    cout<<"Unitatea de masura -> ";
-    cin>>unitate[0];
-    cout<<"Introdu valoare -> ";
-    cin>>value;
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl<<endl;
+    cout<<"Selectia dumneavoastra -> ";
+    cin>>unitate;
     system("CLS");
-    cout<<value;
-        cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    if((unitate[0] == 'P' || unitate[0]  == 'p') && unitate[1]==0)
     {
+        system("CLS");
+        main();
+    }
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1]==0)
+    {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"m="<<endl<<endl;
         valueCM = 100*value;
         cout<<'='<<valueCM<<" cm"<<endl;
@@ -157,8 +168,19 @@ void lungimeAll()
         valueFT = value/ft;
         cout<<'='<<valueFT<<" ft"<<endl;
     }
-    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"cm="<<endl<<endl;
         valueM = value/100;
         cout<<'='<<valueM<<" m"<<endl;
@@ -177,8 +199,19 @@ void lungimeAll()
         valueFT = value/ft;
         cout<<'='<<valueFT/100<<" ft"<<endl;
     }
-    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"mm="<<endl<<endl;
         valueM = value/1000;
         cout<<'='<<valueM<<" m"<<endl;
@@ -197,8 +230,19 @@ void lungimeAll()
         valueFT = value/ft;
         cout<<'='<<valueFT/1000<<" ft"<<endl;
     }
-    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"km="<<endl<<endl;
         valueM = value*1000;
         cout<<'='<<valueM<<" m"<<endl;
@@ -217,8 +261,19 @@ void lungimeAll()
         valueFT = value/ft;
         cout<<'='<<valueFT*1000<<" ft"<<endl;
     }
-    else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"in="<<endl<<endl;
         valueM = value*in;
         cout<<'='<<valueM<<" m"<<endl;
@@ -237,8 +292,18 @@ void lungimeAll()
         valueFT = value/12;
         cout<<'='<<valueFT<<" ft"<<endl;
     }
-    else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    else if((unitate[0] == 'f' || unitate[0] == 'F') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
         cout<<"mi="<<endl<<endl;
         valueM = value*mi;
         cout<<'='<<valueM<<" m"<<endl;
@@ -257,8 +322,19 @@ void lungimeAll()
         valueFT = valueM/ft;
         cout<<'='<<valueFT<<" ft"<<endl;
     }
-    else if(unitate[0] == 'g' || unitate[0] == 'G' && unitate[1] ==0)
+    else if((unitate[0] == 'g' || unitate[0] == 'G') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"nmi="<<endl<<endl;
         valueM = value*nmi;
         cout<<'='<<valueM<<" m"<<endl;
@@ -277,8 +353,19 @@ void lungimeAll()
         valueFT = valueM/ft;
         cout<<'='<<valueFT<<" ft"<<endl;
     }
-    else if(unitate[0] == 'h' || unitate[0] == 'H' && unitate[1] ==0)
+    else if((unitate[0] == 'h' || unitate[0] == 'H') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"yd="<<endl<<endl;
         valueM = value*yd;
         cout<<'='<<valueM<<" m"<<endl;
@@ -297,8 +384,19 @@ void lungimeAll()
         valueFT = valueM/ft;
         cout<<'='<<valueFT<<" ft"<<endl;
     }
-    else if(unitate[0] == 'i' || unitate[0] == 'I' && unitate[1] ==0)
+    else if((unitate[0] == 'i' || unitate[0] == 'I') && unitate[1] ==0)
     {
+        cout<<"Introduceti valoarea -> ";
+        while (!(cin >> value))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+        system("CLS");
+        cout<<value;
         cout<<"ft="<<endl<<endl;
         valueM = value*ft;
         cout<<'='<<valueM<<" m"<<endl;
@@ -317,17 +415,28 @@ void lungimeAll()
         valueYD = valueM/yd;
         cout<<'='<<valueYD<<" yd"<<endl;
     }
-
+    else         cout<<"Selectie invalida";
+    /*{
+        system("CLS");
+        cout<<"Selectie invalida";
+        cout<<endl<<"Incercati din nou -> A"<<endl;
+        cin>>raspuns;
+        if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+        {
+            system("CLS");
+            lungimeAll();
+        }
+    */
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         lungimeAll();
@@ -364,8 +473,8 @@ void arieAll()
     cin>>value;
     system("CLS");
     cout<<value;
-        cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    cout<<fixed<<setprecision(9);
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
     {
         cout<<"m^2="<<endl<<endl;
         valueHA = value/10000;
@@ -377,7 +486,7 @@ void arieAll()
         valueYD2 = value/yd;
         cout<<'='<<valueYD2<<" yd^2"<<endl;
     }
-    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
         cout<<"ha="<<endl<<endl;
         valueM2 = value*10000;
@@ -389,7 +498,7 @@ void arieAll()
         valueYD2 = valueM2/yd;
         cout<<'='<<valueYD2<<" yd^2"<<endl;
     }
-    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
         cout<<"ft^2="<<endl<<endl;
         valueM2 = value*ft;
@@ -401,7 +510,7 @@ void arieAll()
         valueYD2 = valueM2/yd;
         cout<<'='<<valueYD2<<" yd^2"<<endl;
     }
-    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
         cout<<"in^2="<<endl<<endl;
         valueM2 = value*in;
@@ -413,7 +522,7 @@ void arieAll()
         valueYD2 = valueM2/yd;
         cout<<'='<<valueYD2<<" yd^2"<<endl;
     }
-    else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
     {
         cout<<"yd^2="<<endl<<endl;
         valueM2 = value*yd;
@@ -429,12 +538,12 @@ void arieAll()
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         volumAll();
@@ -474,8 +583,8 @@ void volumAll()
     cin>>value;
     system("CLS");
     cout<<value;
-        cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    cout<<fixed<<setprecision(9);
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
     {
         cout<<"m^3="<<endl<<endl;
         valueLIT = value*1000;
@@ -489,7 +598,7 @@ void volumAll()
         valueYD3 = value/yd;
         cout<<'='<<valueYD3<<" yd^3"<<endl;
     }
-    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
         cout<<"l="<<endl<<endl;
         valueM3 = value/1000;
@@ -504,7 +613,7 @@ void volumAll()
         cout<<'='<<valueYD3<<" yd^3"<<endl;
 
     }
-       else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
         cout<<"gal="<<endl<<endl;
         valueM3 = value*gal;
@@ -518,7 +627,7 @@ void volumAll()
         valueYD3 = valueM3/yd;
         cout<<'='<<valueYD3<<" yd^3"<<endl;
     }
-       else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
         cout<<"ft^3="<<endl<<endl;
         valueM3 = value*ft;
@@ -532,7 +641,7 @@ void volumAll()
         valueYD3 = valueM3/yd;
         cout<<'='<<valueYD3<<" yd^3"<<endl;
     }
-      else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
     {
         cout<<"in^3="<<endl<<endl;
         valueM3 = value*in;
@@ -546,7 +655,7 @@ void volumAll()
         valueYD3 = valueM3/yd;
         cout<<'='<<valueYD3<<" yd^3"<<endl;
     }
-    else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    else if((unitate[0] == 'f' || unitate[0] == 'F') && unitate[1] ==0)
     {
         cout<<"yd^3="<<endl<<endl;
         valueM3 = value*yd;
@@ -564,12 +673,12 @@ void volumAll()
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         volumAll();
@@ -611,12 +720,9 @@ void timpAll()
     cout<<fixed<<setprecision(9);
     cout<<value;
 
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
     {
         cout<<"s="<<endl<<endl;
-       // valueS = 100*value;
-       // cout<<'='<<valueS<" s"<<endl;
-
         valueMIN = value/60;
         cout<<'='<<valueMIN<<" min"<<endl;
         valueH=valueMIN/60;
@@ -636,7 +742,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
         cout<<"min="<<endl<<endl;
         valueS = value*60;
@@ -658,7 +764,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
         cout<<"h="<<endl<<endl;
         valueMIN = value*60;
@@ -680,7 +786,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
         cout<<"zile="<<endl<<endl;
 
@@ -703,7 +809,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-        else if(unitate[0] == 'e' || unitate[0] == 'F' && unitate[1] ==0)
+    else if((unitate[0] == 'e' || unitate[0] == 'F') && unitate[1] ==0)
     {
         cout<<"saptamani="<<endl<<endl;
 
@@ -726,7 +832,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-            else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    else if((unitate[0] == 'f' || unitate[0] == 'F') && unitate[1] ==0)
     {
         cout<<"luni="<<endl<<endl;
         valueD=value*ziLuna;
@@ -748,7 +854,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-                else if(unitate[0] == 'g' || unitate[0] == 'G' && unitate[1] ==0)
+    else if((unitate[0] == 'g' || unitate[0] == 'G') && unitate[1] ==0)
     {
         cout<<"ani="<<endl<<endl;
         valueD=value*365;
@@ -770,7 +876,7 @@ void timpAll()
         valueMIL = value/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'h' || unitate[0] == 'H' && unitate[1] ==0)
+    else if((unitate[0] == 'h' || unitate[0] == 'H') && unitate[1] ==0)
     {
         cout<<"decenii="<<endl<<endl;
         valueYE=value*10;
@@ -792,7 +898,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'i' || unitate[0] == 'I' && unitate[1] ==0)
+    else if((unitate[0] == 'i' || unitate[0] == 'I') && unitate[1] ==0)
     {
         cout<<"=secole"<<endl;
         valueYE=value*100;
@@ -814,7 +920,7 @@ void timpAll()
         valueMIL = valueYE/1000;
         cout<<'='<<valueMIL<<" milenii"<<endl;
     }
-    else if(unitate[0] == 'j' || unitate[0] == 'J' && unitate[1] ==0)
+    else if((unitate[0] == 'j' || unitate[0] == 'J') && unitate[1] ==0)
     {
         cout<<"=milenii"<<endl;
         valueYE=value*1000;
@@ -840,12 +946,12 @@ void timpAll()
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         timpAll();
@@ -880,31 +986,31 @@ void vitezaAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
-        {
-            cout<<"=km/h"<<endl;
-            valueMS=value/ms;
-            cout<<'='<<valueMS<<" m/s"<<endl;
-            valueMPH=value/mph;
-            cout<<'='<<valueMPH<<" mph"<<endl;
-        }
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
+    {
+        cout<<"=km/h"<<endl;
+        valueMS=value/ms;
+        cout<<'='<<valueMS<<" m/s"<<endl;
+        valueMPH=value/mph;
+        cout<<'='<<valueMPH<<" mph"<<endl;
+    }
 
-    else    if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
-        {
-            cout<<"=m/s"<<endl;
-            valueKMH=value*ms;
-            cout<<'='<<valueKMH<<" km/h"<<endl;
-            valueMPH=valueKMH/mph;
-            cout<<'='<<valueMPH<<" mph"<<endl;
-        }
-         else    if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
-        {
-            cout<<"=mph"<<endl;
-            valueKMH=value*mph;
-            cout<<'='<<valueKMH<<" km/h"<<endl;
-            valueMS=valueKMH/ms;
-            cout<<'='<<valueMS<<" m/s"<<endl;
-        }
+    else    if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
+    {
+        cout<<"=m/s"<<endl;
+        valueKMH=value*ms;
+        cout<<'='<<valueKMH<<" km/h"<<endl;
+        valueMPH=valueKMH/mph;
+        cout<<'='<<valueMPH<<" mph"<<endl;
+    }
+    else    if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
+    {
+        cout<<"=mph"<<endl;
+        valueKMH=value*mph;
+        cout<<'='<<valueKMH<<" km/h"<<endl;
+        valueMS=valueKMH/ms;
+        cout<<'='<<valueMS<<" m/s"<<endl;
+    }
 }
 void temperaturaAll()
 {
@@ -924,8 +1030,8 @@ void temperaturaAll()
     cin>>value;
     system("CLS");
     cout<<value;
-cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    cout<<fixed<<setprecision(9);
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
     {
         cout<<"C="<<endl<<endl;
         valueF =value*1.8+32;
@@ -935,7 +1041,7 @@ cout<<fixed<<setprecision(9);
         valueR =(value+273.15)*1.8 ;
         cout<<'='<<valueR<<" R"<<endl;
     }
-    else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
         cout<<"F="<<endl<<endl;
         valueC =(value-32)/1.8 ;
@@ -945,7 +1051,7 @@ cout<<fixed<<setprecision(9);
         valueR =value+459.67;
         cout<<'='<<valueR<<" R"<<endl;
     }
-    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
         cout<<"K="<<endl<<endl;
         valueC =value-273.15 ;
@@ -955,7 +1061,7 @@ cout<<fixed<<setprecision(9);
         valueR =value*1.8 ;
         cout<<'='<<valueR<<" R"<<endl;
     }
-    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
         cout<<"R="<<endl<<endl;
         valueC =(value-491.67)*r;
@@ -965,16 +1071,16 @@ cout<<fixed<<setprecision(9);
         valueK =value*r ;
         cout<<'='<<valueK<<" K"<<endl;
     }
-        cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         temperaturaAll();
@@ -1016,7 +1122,7 @@ void masaAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-    if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
     {
         cout<<"g="<<endl<<endl;
         valueMG= 1000*value;
@@ -1034,7 +1140,7 @@ void masaAll()
         valueTROY = value/troy;
         cout<<'='<<valueTROY<<" troy"<<endl;
     }
-  else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
     {
         cout<<"mg="<<endl<<endl;
         valueG= value/1000;
@@ -1054,7 +1160,7 @@ void masaAll()
 
 
     }
-    else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
     {
         cout<<"kg="<<endl<<endl;
         valueG= value*1000;
@@ -1073,7 +1179,7 @@ void masaAll()
         cout<<'='<<valueTROY<<" troy"<<endl;
 
     }
-    else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
     {
         cout<<"t="<<endl<<endl;
         valueG= value*1000000;
@@ -1091,9 +1197,9 @@ void masaAll()
         valueTROY = valueG/troy;
         cout<<'='<<valueTROY<<" troy"<<endl;
     }
-    else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
     {
-    cout<<"lb="<<endl<<endl;
+        cout<<"lb="<<endl<<endl;
         valueG= value*lb;
         cout<<'='<<valueG<<" g"<<endl;
         valueMG= valueG*1000;
@@ -1109,7 +1215,7 @@ void masaAll()
         valueTROY = valueG/troy;
         cout<<'='<<valueTROY<<" troy"<<endl;
     }
-    else if(unitate[0] == 'f' || unitate[0] == 'F' && unitate[1] ==0)
+    else if((unitate[0] == 'f' || unitate[0] == 'F') && unitate[1] ==0)
     {
         cout<<"slug="<<endl<<endl;
         valueG= value*slug/1000;
@@ -1127,9 +1233,9 @@ void masaAll()
         valueTROY = valueG/troy;
         cout<<'='<<valueTROY<<" troy"<<endl;
     }
-   else if(unitate[0] == 'g' || unitate[0] == 'G' && unitate[1] ==0)
+    else if((unitate[0] == 'g' || unitate[0] == 'G') && unitate[1] ==0)
     {
-cout<<"oz (Av)="<<endl<<endl;
+        cout<<"oz (Av)="<<endl<<endl;
         valueG= value*av;
         cout<<'='<<valueG<<" g"<<endl;
         valueMG= valueG*1000;
@@ -1145,9 +1251,9 @@ cout<<"oz (Av)="<<endl<<endl;
         valueTROY = valueG/troy;
         cout<<'='<<valueTROY<<" troy"<<endl;
     }
-    else if(unitate[0] == 'h' || unitate[0] == 'H' && unitate[1] ==0)
+    else if((unitate[0] == 'h' || unitate[0] == 'H') && unitate[1] ==0)
     {
-    cout<<"oz (Troy)="<<endl<<endl;
+        cout<<"oz (Troy)="<<endl<<endl;
         valueG= value*troy;
         cout<<'='<<valueG<<" g"<<endl;
         valueMG= valueG*1000;
@@ -1167,12 +1273,12 @@ cout<<"oz (Av)="<<endl<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         masaAll();
@@ -1205,52 +1311,52 @@ void energieAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
-        {
-            cout<<"J="<<endl;
-            valueKJ= value/1000;
-            cout<<'='<<valueKJ<<" kJ"<<endl;
-            cout<<'='<<value<<" w*s"<<endl;
-            valueWH= value/3600;
-            cout<<'='<<valueWH<<" w*h"<<endl;
-        }
-        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
-        {
-            cout<<"kJ="<<endl;
-            valueJ= value*1000;
-            cout<<'='<<valueJ<<" J"<<endl;
-            cout<<'='<<valueJ<<" w*s"<<endl;
-            valueWH= valueJ/3600;
-            cout<<'='<<valueWH<<" w*h"<<endl;
-        }
-        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
-        {
-            cout<<"w*s="<<endl;
-            cout<<'='<<value<<" J"<<endl;
-            valueKJ= value/1000;
-            cout<<'='<<valueKJ<<" kJ"<<endl;
-            valueWH= value/3600;
-            cout<<'='<<valueWH<<" w*h"<<endl;
-        }
-        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
-        {
-            cout<<"w*h="<<endl;
-            valueJ= value*3600;
-            cout<<'='<<valueJ<<" J"<<endl;
-            valueKJ= valueJ/1000;
-            cout<<'='<<valueKJ<<" kJ"<<endl;
-            cout<<'='<<valueJ<<" w*s"<<endl;
-        }
-        cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
+    {
+        cout<<"J="<<endl;
+        valueKJ= value/1000;
+        cout<<'='<<valueKJ<<" kJ"<<endl;
+        cout<<'='<<value<<" w*s"<<endl;
+        valueWH= value/3600;
+        cout<<'='<<valueWH<<" w*h"<<endl;
+    }
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
+    {
+        cout<<"kJ="<<endl;
+        valueJ= value*1000;
+        cout<<'='<<valueJ<<" J"<<endl;
+        cout<<'='<<valueJ<<" w*s"<<endl;
+        valueWH= valueJ/3600;
+        cout<<'='<<valueWH<<" w*h"<<endl;
+    }
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
+    {
+        cout<<"w*s="<<endl;
+        cout<<'='<<value<<" J"<<endl;
+        valueKJ= value/1000;
+        cout<<'='<<valueKJ<<" kJ"<<endl;
+        valueWH= value/3600;
+        cout<<'='<<valueWH<<" w*h"<<endl;
+    }
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
+    {
+        cout<<"w*h="<<endl;
+        valueJ= value*3600;
+        cout<<'='<<valueJ<<" J"<<endl;
+        valueKJ= valueJ/1000;
+        cout<<'='<<valueKJ<<" kJ"<<endl;
+        cout<<'='<<valueJ<<" w*s"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         energieAll();
@@ -1289,76 +1395,76 @@ void presiuneAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
-        {
-            cout<<"=Pa"<<endl;
-            valueBAR= value/bar;
-            cout<<'='<<valueBAR<<" bar"<<endl;
-            valuePSI= value/psi;
-            cout<<'='<<valuePSI<<" psi"<<endl;
-            valueATM= value/atm;
-            cout<<'='<<valueATM<<" atm"<<endl;
-            valueTORR= value/torr;
-            cout<<'='<<valueTORR<<" torr"<<endl;
-        }
-        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
-        {
-            cout<<"=bar"<<endl;
-            valuePA=value*bar;
-            cout<<'='<<valuePA<<" pa"<<endl;
-            valuePSI= valuePA/psi;
-            cout<<'='<<valuePSI<<" psi"<<endl;
-            valueATM= valuePA/atm;
-            cout<<'='<<valueATM<<" atm"<<endl;
-            valueTORR= valuePA/torr;
-            cout<<'='<<valueTORR<<" torr"<<endl;
-        }
-        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
-        {
-            cout<<"=psi"<<endl;
-            valuePA=value*psi;
-            cout<<'='<<valuePA<<" pa"<<endl;
-            valueBAR= valuePA/bar;
-            cout<<'='<<valueBAR<<" bar"<<endl;
-            valueATM= valuePA/atm;
-            cout<<'='<<valueATM<<" atm"<<endl;
-            valueTORR= valuePA/torr;
-            cout<<'='<<valueTORR<<" torr"<<endl;
-        }
-        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
-        {
-            cout<<"=atm"<<endl;
-            valuePA=value*atm;
-            cout<<'='<<valuePA<<" pa"<<endl;
-            valueBAR= valuePA/bar;
-            cout<<'='<<valueBAR<<" bar"<<endl;
-            valuePSI= valuePA/psi;
-            cout<<'='<<valuePSI<<" psi"<<endl;;
-            valueTORR= valuePA/torr;
-            cout<<'='<<valueTORR<<" torr"<<endl;
-        }
-        else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
-        {
-            cout<<"=torr"<<endl;
-            valuePA=value*torr;
-            cout<<'='<<valuePA<<" pa"<<endl;
-            valueBAR= valuePA/bar;
-            cout<<'='<<valueBAR<<" bar"<<endl;
-            valuePSI= valuePA/psi;
-            cout<<'='<<valuePSI<<" psi"<<endl;
-            valueATM= valuePA/atm;
-            cout<<'='<<valueATM<<" atm"<<endl;
-        }
-         cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
+    {
+        cout<<"=Pa"<<endl;
+        valueBAR= value/bar;
+        cout<<'='<<valueBAR<<" bar"<<endl;
+        valuePSI= value/psi;
+        cout<<'='<<valuePSI<<" psi"<<endl;
+        valueATM= value/atm;
+        cout<<'='<<valueATM<<" atm"<<endl;
+        valueTORR= value/torr;
+        cout<<'='<<valueTORR<<" torr"<<endl;
+    }
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
+    {
+        cout<<"=bar"<<endl;
+        valuePA=value*bar;
+        cout<<'='<<valuePA<<" pa"<<endl;
+        valuePSI= valuePA/psi;
+        cout<<'='<<valuePSI<<" psi"<<endl;
+        valueATM= valuePA/atm;
+        cout<<'='<<valueATM<<" atm"<<endl;
+        valueTORR= valuePA/torr;
+        cout<<'='<<valueTORR<<" torr"<<endl;
+    }
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
+    {
+        cout<<"=psi"<<endl;
+        valuePA=value*psi;
+        cout<<'='<<valuePA<<" pa"<<endl;
+        valueBAR= valuePA/bar;
+        cout<<'='<<valueBAR<<" bar"<<endl;
+        valueATM= valuePA/atm;
+        cout<<'='<<valueATM<<" atm"<<endl;
+        valueTORR= valuePA/torr;
+        cout<<'='<<valueTORR<<" torr"<<endl;
+    }
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
+    {
+        cout<<"=atm"<<endl;
+        valuePA=value*atm;
+        cout<<'='<<valuePA<<" pa"<<endl;
+        valueBAR= valuePA/bar;
+        cout<<'='<<valueBAR<<" bar"<<endl;
+        valuePSI= valuePA/psi;
+        cout<<'='<<valuePSI<<" psi"<<endl;;
+        valueTORR= valuePA/torr;
+        cout<<'='<<valueTORR<<" torr"<<endl;
+    }
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
+    {
+        cout<<"=torr"<<endl;
+        valuePA=value*torr;
+        cout<<'='<<valuePA<<" pa"<<endl;
+        valueBAR= valuePA/bar;
+        cout<<'='<<valueBAR<<" bar"<<endl;
+        valuePSI= valuePA/psi;
+        cout<<'='<<valuePSI<<" psi"<<endl;
+        valueATM= valuePA/atm;
+        cout<<'='<<valueATM<<" atm"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         presiuneAll();
@@ -1395,68 +1501,93 @@ void densitateAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
-        {
-            cout<<"kg/m^3="<<endl;
-            valueFUNTin= value/funtIN;
-            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
-            valueFUNTgal= value/funtGAL;
-            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
-            valueKGl= value/1000;
-            cout<<'='<<valueKGl<<" kg/l"<<endl;
-            valueUNCIE= value/uncie;
-            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
-        }
-        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
-        {
-            cout<<"lb/in^3="<<endl;
-            valueKMm3=value*funtIN;
-            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;;
-            valueFUNTgal= valueKMm3/funtGAL;
-            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
-            valueKGl= valueKMm3/1000;
-            cout<<'='<<valueKGl<<" kg/l"<<endl;
-            valueUNCIE= valueKMm3/uncie;
-            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
+    {
+        cout<<"kg/m^3="<<endl;
+        valueFUNTin= value/funtIN;
+        cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+        valueFUNTgal= value/funtGAL;
+        cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+        valueKGl= value/1000;
+        cout<<'='<<valueKGl<<" kg/l"<<endl;
+        valueUNCIE= value/uncie;
+        cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+    }
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
+    {
+        cout<<"lb/in^3="<<endl;
+        valueKMm3=value*funtIN;
+        cout<<'='<<valueKMm3<<" kg/m^3"<<endl;;
+        valueFUNTgal= valueKMm3/funtGAL;
+        cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+        valueKGl= valueKMm3/1000;
+        cout<<'='<<valueKGl<<" kg/l"<<endl;
+        valueUNCIE= valueKMm3/uncie;
+        cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
 
-        }
-        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
-        {
-            cout<<"lb/gal="<<endl;
-            valueKMm3=value*funtGAL;
-            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
-            valueFUNTin= valueKMm3/funtIN;
-            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
-            valueKGl= valueKMm3/1000;
-            cout<<'='<<valueKGl<<" kg/l"<<endl;
-            valueUNCIE= valueKMm3/uncie;
-            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+    }
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
+    {
+        cout<<"lb/gal="<<endl;
+        valueKMm3=value*funtGAL;
+        cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+        valueFUNTin= valueKMm3/funtIN;
+        cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+        valueKGl= valueKMm3/1000;
+        cout<<'='<<valueKGl<<" kg/l"<<endl;
+        valueUNCIE= valueKMm3/uncie;
+        cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
 
-        }
-        else if(unitate[0] == 'd' || unitate[0] == 'D' && unitate[1] ==0)
-        {
-            cout<<"kg/l="<<endl;
-            valueKMm3=value*1000;
-            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
-            valueFUNTin= valueKMm3/funtIN;
-            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
-            valueFUNTgal= valueKMm3/funtGAL;
-            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
-            valueUNCIE= valueKMm3/uncie;
-            cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
-        }
-        else if(unitate[0] == 'e' || unitate[0] == 'E' && unitate[1] ==0)
-        {
-            cout<<"oz(Av)/ft^3="<<endl;
-            valueKMm3=value*uncie;
-            cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
-            valueFUNTin= valueKMm3/funtIN;
-            cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
-            valueFUNTgal= valueKMm3/funtGAL;
-            cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
-            valueKGl= valueKMm3/1000;
-            cout<<'='<<valueKGl<<" kg/l"<<endl;
-        }
+    }
+    else if((unitate[0] == 'd' || unitate[0] == 'D') && unitate[1] ==0)
+    {
+        cout<<"kg/l="<<endl;
+        valueKMm3=value*1000;
+        cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+        valueFUNTin= valueKMm3/funtIN;
+        cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+        valueFUNTgal= valueKMm3/funtGAL;
+        cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+        valueUNCIE= valueKMm3/uncie;
+        cout<<'='<<valueUNCIE<<" oz(Av)/ft^3"<<endl;
+    }
+    else if((unitate[0] == 'e' || unitate[0] == 'E') && unitate[1] ==0)
+    {
+        cout<<"oz(Av)/ft^3="<<endl;
+        valueKMm3=value*uncie;
+        cout<<'='<<valueKMm3<<" kg/m^3"<<endl;
+        valueFUNTin= valueKMm3/funtIN;
+        cout<<'='<<valueFUNTin<<" lb/in^3"<<endl;
+        valueFUNTgal= valueKMm3/funtGAL;
+        cout<<'='<<valueFUNTgal<<" lb/gal"<<endl;
+        valueKGl= valueKMm3/1000;
+        cout<<'='<<valueKGl<<" kg/l"<<endl;
+    }
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
+    {
+        system("CLS");
+        main();
+    }
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
+    {
+        system("CLS");
+        combustibilAll();
+    }
+
+    else
+    {
+        system("CLS");
+        cout<<"SFARSITUL PROGRAMULUI"<<endl;
+        cout<<"Trinca Ioana-Alexandra"<<endl;
+        cout<<"Proiect Introducere in programare"<<endl;
+        cout<<"CONVERTOR"<<endl;
+        cout<<"2017"<<endl;
+        exit (EXIT_FAILURE);
+    }
+
 }
 void combustibilAll()
 {
@@ -1474,41 +1605,40 @@ void combustibilAll()
     system("CLS");
     cout<<value;
     cout<<fixed<<setprecision(9);
-        if(unitate[0] == 'a' || unitate[0] == 'A' && unitate[1] ==0)
-        {
-            cout<<"km/l="<<endl;
-            valueL= 100/value;
-            cout<<'='<<valueL<<" l/100km"<<endl;
-            valueG= value/g;
-            cout<<'='<<valueG<<" mile/galon"<<endl;
-        }
-        else if(unitate[0] == 'b' || unitate[0] == 'B' && unitate[1] ==0)
-        {
-            cout<<"l/100km="<<endl;
-            valueK= 100/value;
-            cout<<'='<<valueK<<" km/l"<<endl;
-            valueG= valueK/g;
-            cout<<'='<<valueG<<" mile/galon"<<endl;
-        }
-        else if(unitate[0] == 'c' || unitate[0] == 'C' && unitate[1] ==0)
-        {
-            cout<<"mile/galon="<<endl;
-            valueK= value*g;
-            cout<<'='<<valueK<<" km/l"<<endl;
-            valueL= 100/valueK;
-            cout<<'='<<valueL<<" l/100km"<<endl;
-        }
+    if((unitate[0] == 'a' || unitate[0] == 'A') && unitate[1] ==0)
+    {
+        cout<<"km/l="<<endl;
+        valueL= 100/value;
+        cout<<'='<<valueL<<" l/100km"<<endl;
+        valueG= value/g;
+        cout<<'='<<valueG<<" mile/galon"<<endl;
+    }
+    else if((unitate[0] == 'b' || unitate[0] == 'B') && unitate[1] ==0)
+    {
+        cout<<"l/100km="<<endl;
+        valueK= 100/value;
+        cout<<'='<<valueK<<" km/l"<<endl;
+        valueG= valueK/g;
+        cout<<'='<<valueG<<" mile/galon"<<endl;
+    }
+    else if((unitate[0] == 'c' || unitate[0] == 'C') && unitate[1] ==0)
+    {
+        cout<<"mile/galon="<<endl;
+        valueK= value*g;
+        cout<<'='<<valueK<<" km/l"<<endl;
+        valueL= 100/valueK;
+        cout<<'='<<valueL<<" l/100km"<<endl;
+    }
 
-         cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
     cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
-    cin>>raspuns;
-    if(raspuns[0] == 'P' || raspuns[0]  == 'p')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
-    else if(raspuns[0] == 'A' || raspuns[0]  == 'a')
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
     {
         system("CLS");
         combustibilAll();
