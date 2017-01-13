@@ -14,6 +14,8 @@ void presiuneAll();
 void densitateAll();
 void combustibilAll();
 void invalid();
+void setari();
+void exitt();
 int main()
 {
     char choise[2];
@@ -29,10 +31,10 @@ int main()
     cout << "(I) - Timp" << endl;
     cout << "(J) - Viteza" << endl;
     cout << "(K) - Volum" << endl;
+    cout <<"(S) - Setare precizie"<<endl;
     cout << "(X) - Exit"<<endl<<endl;
     cout << "Alegerea dumneavoastra -> ";
     cin >> choise;
-    cout<<fixed;
     if((choise[0]=='A' || choise[0]=='a') && choise[1]==0)
     {
         system("CLS");
@@ -88,25 +90,79 @@ int main()
         system("CLS");
         volumAll();
     }
-    else if((choise[0]=='X' || choise[0]=='x') && choise[1]==0)
+    else if((choise[0]=='S' || choise[0]=='s') && choise[1]==0)
     {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        return 0;
+       system("CLS");
+       setari();
     }
+    else if((choise[0]=='X' || choise[0]=='x') && choise[1]==0)
+        exitt();
     else
     {
         system("CLS");
         invalid();
     }
-
-    return 0;
 }
+void setari()
+{
 
+       char choise[2],raspuns[2];
+       cout<<"Afisare stiintifica a rezultatelor  -> A"<<endl;
+       cout<<"Afisarea matematica a rezultatelor ->B"<<endl;
+       cout<<"Setare numar de zecimale -> C"<<endl;
+       cout<<"Pentru a reveni la meniul principal -> P"<<endl;
+       cin >> choise;
+       if((choise[0]=='A' || choise[0]=='a') && choise[1]==0)
+       {
+          system("CLS");
+          cout<<scientific<<"REALIZAT"<<endl;
+       }
+
+       else if((choise[0]=='B' || choise[0]=='b') && choise[1]==0)
+       {
+           system("CLS");
+           cout<<fixed<<"REALIZAT"<<endl;
+       }
+
+       else  if((choise[0]=='C' || choise[0]=='c') && choise[1]==0)
+        {
+            system("CLS");
+            int nrZec;
+            cout<<"Introduceti numarul de zecimale dorit"<<endl;
+            while (!(cin >> nrZec))
+        {
+            system("CLS");
+            cout<<"Valoarea este invalida"<<endl;
+            cout << "Va rog introduceti o valoare numerica -> ";
+            cin.clear();
+            cin.ignore(50,'\n');
+        }
+            cout<<setprecision(nrZec)<<"REALIZAT"<<endl;
+        }
+        else if((choise[0]=='P' || choise[0]=='p') && choise[1]==0)
+        {
+            system("CLS");
+            main();
+        }
+        else         cout<<"Selectie invalida";
+
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
+    cin>>raspuns;
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
+    {
+        system("CLS");
+        main();
+    }
+    else if((raspuns[0] == 'A' || raspuns[0]  == 'a') && raspuns[1]==0)
+    {
+        system("CLS");
+        setari();
+    }
+    else
+        exitt();
+}
 void lungimeAll()
 {
     cout<<"::Lungime::"<<endl<<endl;
@@ -418,7 +474,7 @@ void lungimeAll()
 
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -430,17 +486,8 @@ void lungimeAll()
         system("CLS");
         lungimeAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void arieAll()
 {
@@ -583,7 +630,7 @@ void arieAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -595,18 +642,8 @@ void arieAll()
         system("CLS");
         volumAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
-
+        exitt();
 }
 void volumAll()
 {
@@ -787,7 +824,7 @@ void volumAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -799,17 +836,8 @@ void volumAll()
         system("CLS");
         volumAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void timpAll()
 {
@@ -1173,7 +1201,7 @@ void timpAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
 if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -1185,17 +1213,8 @@ if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
         system("CLS");
         timpAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 
 }
 void vitezaAll()
@@ -1279,7 +1298,7 @@ void vitezaAll()
 else         cout<<"Selectie invalida";
 cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
 if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -1291,17 +1310,8 @@ if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
         system("CLS");
         timpAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void temperaturaAll()
 {
@@ -1410,7 +1420,7 @@ void temperaturaAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -1422,17 +1432,8 @@ void temperaturaAll()
         system("CLS");
         temperaturaAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void masaAll()
 {
@@ -1688,7 +1689,7 @@ void masaAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -1700,17 +1701,8 @@ void masaAll()
         system("CLS");
         masaAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void energieAll()
 {
@@ -1826,18 +1818,8 @@ void energieAll()
         system("CLS");
         energieAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
-
+        exitt();
 }
 void presiuneAll()
 {
@@ -1981,7 +1963,7 @@ void presiuneAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     cin>>raspuns;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
@@ -1993,17 +1975,8 @@ void presiuneAll()
         system("CLS");
         presiuneAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
+        exitt();
 }
 void densitateAll()
 {
@@ -2148,7 +2121,7 @@ void densitateAll()
     else         cout<<"Selectie invalida";
     cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
     cout<<"Pentru a reveni la meniul anterior -> A"<<endl;
-    cout<<"Pentru a iesi din convertor -> orice tasta"<<endl;
+    cout<<"Pentru a iesi din convertor -> orice alta tasta"<<endl;
     if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
@@ -2159,18 +2132,8 @@ void densitateAll()
         system("CLS");
         combustibilAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
-
+        exitt();
 }
 void combustibilAll()
 {
@@ -2263,40 +2226,31 @@ void combustibilAll()
         system("CLS");
         combustibilAll();
     }
-
     else
-    {
-        system("CLS");
-        cout<<"SFARSITUL PROGRAMULUI"<<endl;
-        cout<<"Trinca Ioana-Alexandra"<<endl;
-        cout<<"Proiect Introducere in programare"<<endl;
-        cout<<"CONVERTOR"<<endl;
-        cout<<"2017"<<endl;
-        exit (EXIT_FAILURE);
-    }
-
-
+        exitt();
 }
 void invalid()
 {
     char raspuns[2];
     cout << "Selectie invalida" << endl;
-    cout<<endl<<"Vrei sa continui? (Y/N)"<<endl;
+    cout<<endl<<"Pentru a reveni la meniul principal -> P"<<endl;
+    cout<<endl<<"Pentru a iesini din convertor -> orice tasta"<<endl;
     cin>>raspuns;
-    if(raspuns[0] == 'Y' || raspuns[0]  == 'y')
+    if((raspuns[0] == 'P' || raspuns[0]  == 'p') && raspuns[1]==0)
     {
         system("CLS");
         main();
     }
     else
-    {
+        exitt();
+}
+void exitt()
+{
         system("CLS");
         cout<<"SFARSITUL PROGRAMULUI"<<endl;
         cout<<"Trinca Ioana-Alexandra"<<endl;
         cout<<"Proiect Introducere in programare"<<endl;
         cout<<"CONVERTOR"<<endl;
         cout<<"2017"<<endl;
-
         exit (EXIT_FAILURE);
-    }
 }
